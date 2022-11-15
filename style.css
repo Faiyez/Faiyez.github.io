@@ -1,0 +1,443 @@
+*{
+  /*  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Arial, Helvetica, sans-serif;
+  */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+    margin: 0;
+    padding: 0;  
+}
+@media (max-width: 768px){
+    .sectionA .sectionB .sectionC .sectionD .sectionF{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+.main{
+    text-align: center;
+}
+nav{
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    display: inline-block;
+    background: #0001;
+    text-align: center;
+    z-index: 10;
+    
+}
+.name::before{
+    content:'';
+    animation: blinkCursor 0.8s steps(3) infinite;
+}
+@keyframes blinkCursor{
+    0%,75%{
+        opacity: 1;
+    }
+    70%,100%{
+        opacity: 0;
+    }
+}
+.name{
+    animation: typing 8s steps(11) infinite;
+    overflow:hidden;
+}
+@keyframes typing{
+    0%,90%,100%{
+        width: 0;
+    }
+    30%,60%{
+        width: 95px;
+    }
+}
+.totalUl li a{
+    color: black;
+    text-decoration: none;
+}
+.totalUl li a:hover{
+    color: white;
+    transition: all ease 0.3s;
+}
+.sectionA{
+    position: relative;
+}
+.sectionB{
+    height: 100vh;
+}
+.total{
+    width: 100%;
+    height: 3000px;    
+    background: linear-gradient(to right,rgb(219, 229, 235),rgb(112, 175, 237));   
+}
+.totalUl{
+    width: 100%;
+    height: 100%;
+}
+.totalUl li{
+    display: inline-block; /*  Item is placed inline  */
+    text-align: center;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    cursor: pointer;
+    margin: 5px;
+    padding: 2px;   
+}
+.totalUl .name{
+    position: fixed;
+    left: 15px;
+    font-size: x-large;
+}
+.about{
+    position: relative;
+    text-align: center;
+    display: block;
+    margin-left: auto;  /* Equal margin on width */
+    margin-right: auto;
+    top: 75px;
+    width: 90%;
+    height: 100%;
+    
+    background: white;
+    
+    color: black;
+    border-radius: 20px;
+}
+.animation .bubbles{
+    position: relative;
+    align-items: center;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background:rgb(118, 210, 226);
+    margin: 0 4px;
+    border-radius: 50%;
+    animation: animate 15s linear infinite;
+}
+@keyframes animate{
+    0%
+    {
+        transform: translateY(100vh) scale(0);
+    }
+    100%
+    {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+.about .introName{
+    text-align: center;
+    display: inline-block;
+}
+.lastname{
+    color: orange;
+}
+.about .aboutInfo{
+    position: relative;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin: 5px;
+    padding: 5px;
+    overflow: hidden;
+}
+.image{
+    height: 350px;
+    animation-name: my-animation;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  
+  /* other properties */
+  
+    /*width: 300px;
+    border-radius: 10px;
+    position: absolute;*/
+    position: relative;
+    left: 0; 
+    right: 0; 
+    top: 0;
+    margin-left: auto;
+    margin-right: auto; 
+    
+}
+@keyframes my-animation {
+    from {
+      width: 300px;
+      top: 10px;
+    }
+    to {
+      width: 300px;
+      top: 20px;
+    }
+  }
+#selfImage{
+    max-width: 100%;
+    height: 300px;
+    border-radius: 51% 49% 56% 44% / 19% 23% 77% 81% ;
+}
+.intro{
+    font-size: larger;
+    text-align: left;
+    padding: 10px;
+}
+.intro p{
+    color: rgba(0, 0, 0, 0.555);
+}
+.expProject{
+    margin: 5px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: Center;
+}
+.button{
+    width: 200px;
+    height: 45px;
+    border-radius: 5px;
+    background: rgb(111, 177, 235);
+    font-size: 15px;
+    color: black;
+    cursor: pointer;
+    border-style: none;
+    margin-top: 10px;
+    text-align: center;
+    transition: ease-out 0.6s;
+    
+}
+.button:hover{
+    box-shadow: inset 200px 0 0 0 rgb(43, 228, 212);
+    color:white;
+}
+h1{
+    font-weight: bold;
+    font-size: 40px;
+    padding: 15px;
+}
+.links{
+    display: grid;
+    margin: 20px;
+    height: 50px;
+    grid-template-columns: 33% 33% 33%;
+    
+}
+.links li:hover{
+    transition: 0.5s;
+    transform:translatey(-10px);
+}
+.listItem{
+    position: relative;
+    list-style: none;
+    display: inline-block;   
+    width: 90%;
+    height: 100%;
+    cursor: pointer;    
+    color:rgb(111, 177, 235);
+}
+#logoLink{
+    padding-right: 2px;
+    color:#2080a5;
+}
+#pleaseScroll{
+    display: inline-block;
+}
+.sectionC{
+    position: relative;
+    padding-top: 25px;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 15%;
+    top: 200px;
+    border-radius: 20px;
+}
+.skillsHeader{
+    position: relative;
+    text-align: center;
+    
+}
+#webDevelopment{
+    position: relative;
+    padding: 5px;
+}
+.frontEnd{
+    cursor: pointer;
+    background: white;
+    text-align: left;
+}
+.skillItem{
+    padding: 10px;
+}
+.skills {
+    position: relative;
+    top: 8px;
+    height: 2px;
+    display: inline-block;
+    text-align: center; /* Right-align text */
+    padding-top: 10px; /* Add top padding */
+    padding-bottom: 10px; /* Add bottom padding */
+    padding-left: 80px;
+    margin-left: 20px;
+    color: white; /* White text color */
+    background-color: #2080a5;
+}
+  
+.html {
+    display: inline-block;  
+    width: 100px;
+    left: 6.8%;
+} 
+.CSS {
+    position: relative;
+    left: 9.8%;
+    width: 100px;
+}
+.JS{
+    width: 100px;
+}
+.REACT{
+    width: 70px;
+    left: 5.6%;
+}
+#skillInfo{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 18px;
+}
+#webUp{
+    display: inline-block;
+    cursor: pointer;
+}
+#feContainer{
+    text-align: left;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+#skillId{
+
+    list-style: none;
+    text-align: left;
+}
+.SWEContainer{
+    background: transparent;
+    text-align: left;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    padding-top: 10px;
+}
+#webDevSrcDown:hover,#webDevSrcUp:hover,  #sweUp:hover , #sweDown:hover{
+    transform: translateY(-5px);
+    color: rgb(43, 168, 226);
+}
+.sectionD{
+    position: relative;
+    top: 15%;
+    padding-top: 25px;
+    text-align: center;
+    background: white;
+    margin-left: auto; 
+    margin-right: auto;
+    width: 90%;
+    border-radius: 20px;
+}
+.workStudyContainer{
+    position: relative;   
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    display: grid;    
+    background: transparent;
+    grid-template-columns: 40% 20% 40%;
+   /* margin: 10px; */
+    padding: 10px;
+    border-radius: 5px;
+}
+.wsDiv{
+    background: rgb(111, 177, 235);
+    height: 100px;
+    padding-top: 10px;
+    border-radius: 10px;
+}
+.wsDivEmpty{
+    display: flex;
+    background: transparent;
+    height: 100px;
+    justify-content: center;
+    align-items: center; 
+}
+.circleBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 20%;
+    background: white;
+
+    
+}
+.eduHeader, .workHeader{
+    background: transparent;
+}
+#circlePointer{
+    color:rgb(24, 111, 152);
+}
+.a{
+    color:rgb(24, 111, 152);
+}
+
+.sectionF{
+    position: relative;
+    background: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 100vh;
+    top: 500px;
+    border-radius: 20px;
+}
+.card-container{
+    display: flex;
+    align-items: center;
+    top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.card .card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 240px;
+    background: rgba(6, 198, 232, 0.067);
+    border-radius: 10px;
+}
+.card .project-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+    align-items: center;
+    padding: 3px;
+    background:rgba(0, 0, 0, 0.555)
+}
+.card .project-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
