@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faiyez</title>
     <link rel = 'stylesheet' href = 'style.css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://kit.fontawesome.com/fafe8c0206.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -33,13 +34,34 @@
         </section>
         <section id = 'sectionB' class = 'grid'>
             <div class = 'about'>
+                <!--
                 <div class = 'animation'>
                     <div class = 'bubbles'></div>
                     <div class = 'bubbles'></div>
                     <div class = 'bubbles'></div>
                 </div>
-                <h1 class = 'introName'>Hi!! My name is</h1>
-                <h1 class = 'introName lastname'>Faiyez</h1>
+                -->
+                <h1 class = 'introName hidden'>Hi!! My name is Faiyez.</h1>
+                <div class="textAnimation">
+                    <span class="text first-text">I am a</span>
+                    <span class="text sec-text"></span>
+                </div>
+                <script>
+                    const text = document.querySelector('.sec-text');
+                    const textLoad = () =>{
+                        setTimeout(() => {
+                            text.textContent='Web Developer';
+                        },0);
+                        setTimeout(() => {
+                            text.textContent = 'Software Developer';
+                        },4000);
+                        setTimeout(() => {
+                            text.textContent='Content Creator';
+                        }, 8000);
+                    }
+                    textLoad();
+                    setInterval(textLoad,12000);
+                </script>
                 <div class = 'aboutInfo'>
                     <div class = 'image'>
                         <img src = 'images/self.jpg' id = 'selfImage'>
@@ -56,11 +78,11 @@
         
                         <div class = 'expProject'>
                             <div>
-                                <h1>2+</h1>
+                                <h1 class="hidden">4+</h1>
                                 <h4>Years of Experience</h4>
                             </div>
                             <div>
-                                <h1>10+</h1>
+                                <h1 class="hiddenRight">10+</h1>
                                 <h4>Projects Done</h4>
                             </div>
         
@@ -90,44 +112,41 @@
             </div>         
         </section>
         <section class = 'sectionC' id = 'sectionC'>
+            
             <div class = 'skillsHeader'>
-                <h1>Skills</h1>
-                <h4>Professional Skills</h4>
+                <h1 class="hidden">Skills</h1>
+                <h4 class="hidden">Professional Skills</h4>
             </div>
             <div class = 'skillInfomation' id = 'skillInfo'>
                 <div class = "frontEnd" id = "feContainer">
                     <i class="fa-solid fa-code " id = 'webDevelopment'>
                          Web Development
                     </i>
-                    <i class="fa-solid fa-angle-down fa-xl " id = "webDevSrcDown">
-
-                    </i>
-                    <i class="fa-solid fa-angle-up fa-xl" id = "webDevSrcUp"></i>
                 </div>
                 <div class = 'SWEContainer' id = 'SWEDevelopment'>
-                    <i class="fa-solid fa-gears "> Software Development</i>
-                    <i class="fa-solid fa-angle-down fa-xl" id = "sweDown">
-                    </i>
-                    <i class="fa-solid fa-angle-up fa-xl" id = "sweUp"></i>                    
+                    <i class="fa-solid fa-gears "> Software Development</i>                    
                 </div>
+            </div>
+            <div id='skillsDisplay'>
+
             </div>
         </section>
         <section class = 'sectionD' id = "sectionD">
             <div class = 'workStudyHeader'>
-                <h1>Professional History</h1>
-                <h4>Summary</h4>
+                <h1 class="hidden">Professional History</h1>
+                <h4 class="hidden">Summary</h4>
             </div>
             <div class = 'workStudyContainer'>
-                <div class = 'wsDiv eduHeader'>
+                <div class = 'wsDiv eduHeader hidden'>
                     <h2>Education</h2>
                 </div>
                 <div class = 'wsDivEmpty 0'>
                     
                 </div>
-                <div class = 'wsDiv workHeader'>
+                <div class = 'wsDiv workHeader hiddenRight'>
                     <h2>Work History</h2>
                 </div>
-                <div class = 'wsDiv 1'>
+                <div class = 'wsDiv 1 hidden'>
                     <h2>Memorial University</h2>
                     <h3>2020 to Present</h3>
                     <h3>Computer Science Major</h3>
@@ -144,12 +163,12 @@
                 <div class = 'wsDivEmpty 4'>
                     <i class="fa-solid fa-circle fa-lg" id = 'circlePointer'></i>
                 </div>                                
-                <div class = 'wsDiv 2'>
+                <div class = 'wsDiv 2 hiddenRight'>
                     <h2>Canadian Tire</h2>
                     <h3>2020 to Present</h3>
                     <h3>Online Order Associate</h3>
                 </div>                      
-                <div class = 'wsDiv 3'>
+                <div class = 'wsDiv 3 hidden'>
                     <h2>Notre Dame College</h2>
                     <h3>2016 To 2018</h3>
                     <h3>Science Major</h3>
@@ -159,7 +178,7 @@
                 <div class = 'wsDivEmpty 3'></div>
                 <div class = 'wsDivEmpty 3'><i class="fa-solid fa-circle fa-xs" id = 'circlePointer'></i></div>    
                    
-                <div class = 'wsDiv 4'>
+                <div class = 'wsDiv 4 hiddenRight'>
                     <h2>Notre Dame Science Club</h2>
                     <h3>2016 To 2018</h3>
                     <h3>Volunteer</h3>
@@ -169,10 +188,30 @@
         </section>
         <section>
             <div class = 'sectionF'>
-                <h1>Projects</h1>
-                <div class='card-container'>
-                    <div class='content'>
-                        <div class='card'>
+                <h1 class="hidden">Projects</h1>
+                <div class='swiper mySwiper card-container'>
+                    <div class='swiper-wrapper content'>
+                        <div class='swiper-slide card hidden'>
+                            <div class='card-content'>
+                                <h4>Remind Me</h4>
+                                <div class='project-image'>
+                                    <img src="./images/remindMe.png">                                  
+                                </div>
+                                <div class='image-icons projectDes'>
+                                    <h4>Languages Used: </h4>
+                                    <h4>ReactJS <i class="fa-brands fa-react"></i></h4>
+                                    
+                                </div>
+                                <div class = 'cardButton'>
+                                <input type=button class="Visit Button" onClick="parent.open('https://Faiyez.github.io/react-reminder/')" 
+                                value='Visit' >
+                                    <button class = 'GitHub Button'>GitHub</button>
+                                </div>
+                
+                            </div>
+                        </div>
+
+                        <div class='swiper-slide card hidden'>
                             <div class='card-content'>
                                 <h4>Remind Me</h4>
                                 <div class='project-image'>
@@ -182,13 +221,59 @@
                                 <div class='image-icons'>
                                     <i class="fa-brands fa-react"></i>
                                 </div>
+                                <div class = 'cardButton'>
+                                    <button class = 'Visit Button'>Visit</button>
+                                    <button class = 'GitHub Button'>GitHub</button>
+                                </div>
                 
                             </div>
                         </div>
+
+                        <div class='swiper-slide card hidden'>
+                            <div class='card-content'>
+                                <h4>Remind Me</h4>
+                                <div class='project-image'>
+                                    <img src="./images/remindMe.png">
+                                    
+                                </div>
+                                <div class='image-icons'>
+                                    <i class="fa-brands fa-react"></i>
+                                </div>
+                                <div class = 'cardButton'>
+                                    <button class = 'Visit Button'>Visit</button>
+                                    <button class = 'GitHub Button'>GitHub</button>
+                                </div>
+                
+                            </div>
+                        </div>
+
                     </div>
-                </div> 
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div> 
             </div>
         </section>
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        </script>
 
     </section>
         

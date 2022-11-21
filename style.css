@@ -113,7 +113,7 @@ nav{
     background:rgb(118, 210, 226);
     margin: 0 4px;
     border-radius: 50%;
-    animation: animate 15s linear infinite;
+    animation: animate 10s linear infinite;
 }
 @keyframes animate{
     0%
@@ -129,8 +129,39 @@ nav{
     text-align: center;
     display: inline-block;
 }
-.lastname{
-    color: orange;
+.textAnimation{
+    position:relative;
+    color:black;
+    font-size: 30px;
+    font-weight: 600;   
+}
+.textAnimation .text{
+    position: relative;
+    color:#129cd2;
+    font-size: 30px;
+    font-weight: 600;
+}
+.textAnimation .first-text{
+    color:black;
+}
+.textAnimation .sec-text:before{
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background-color:white; 
+    border-left: 2px solid black;
+    animation: animate 4s steps(12) infinite;
+}
+@keyframes animate {
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0%;
+    }
 }
 .about .aboutInfo{
     position: relative;
@@ -156,7 +187,7 @@ nav{
     position: relative;
     left: 0; 
     right: 0; 
-    top: 0;
+    top: -20vh;
     margin-left: auto;
     margin-right: auto; 
     
@@ -164,7 +195,7 @@ nav{
 @keyframes my-animation {
     from {
       width: 300px;
-      top: 10px;
+      top: 5px;
     }
     to {
       width: 300px;
@@ -260,6 +291,12 @@ h1{
 #webDevelopment{
     position: relative;
     padding: 5px;
+    transition: 0.5s;
+
+}
+#webDevelopment:hover{
+    transform: scale(1.1);
+    background: #90e0ef;   
 }
 .frontEnd{
     cursor: pointer;
@@ -310,28 +347,45 @@ h1{
     cursor: pointer;
 }
 #feContainer{
-    text-align: left;
+    display: flex;
+    align-items: center;
+    width: 400px;
+    text-align: center;
     border-radius: 5px;
     padding: 5px;
     margin: 5px;
 }
 #skillId{
-
     list-style: none;
     text-align: left;
 }
 .SWEContainer{
     background: transparent;
-    text-align: left;
+    text-align: center;
+    width: 265px;
+    height: 20px;
     border-radius: 5px;
     padding: 5px;
     margin: 5px;
     cursor: pointer;
     padding-top: 10px;
 }
+#SWEDevelopment{
+    position: relative;
+    transition: 0.5s;
+}
+#SWEDevelopment:hover{
+    transform:scale(1.1);
+    background: #90e0ef;
+}
 #webDevSrcDown:hover,#webDevSrcUp:hover,  #sweUp:hover , #sweDown:hover{
     transform: translateY(-5px);
     color: rgb(43, 168, 226);
+}
+.sectionC{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .sectionD{
     position: relative;
@@ -402,6 +456,11 @@ h1{
     top: 500px;
     border-radius: 20px;
 }
+.card{
+    position: relative;
+    background:white;
+    border-radius: 20px;
+}
 .card-container{
     display: flex;
     align-items: center;
@@ -409,16 +468,27 @@ h1{
     align-items: center;
     justify-content: center;
 }
+.card::before{
+    content:"";
+    position:absolute;
+    height: 40%;
+    width: 100%;
+    /*background: #2080a5;*/
+    border-radius: 20px 20px 0 0;
+}
 .card .card-content{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 180px;
-    height: 240px;
+    height: 350px;
     background: rgba(6, 198, 232, 0.067);
     border-radius: 10px;
+    position: relative;
+    z-index: 100;
 }
+
 .card .project-image {
     width: 140px;
     height: 140px;
@@ -432,6 +502,76 @@ h1{
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
+}
+.projectDes{
+    text-align: left;
+    padding: 5px;
+    margin: 5px;
+}
+.cardButton{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+
+}
+.Button{
+    background: #129cd2;
+    font-size: 18px;
+    color: black;
+    border: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    
+}
+.Button:hover{
+    background: #45caff;
+    cursor: pointer;
+}
+.swiper{
+    width: 750px;
+}
+/*
+.sectionC{
+    background-image: url('./images/computerEdited.jpg'); 
+    background-size: cover; 
+    height:480px; 
+    padding-top:80px;   
+}
+*/
+#skillsDisplay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: rgba(0, 255, 247, 0.057);
+    width: 400px;
+    height: 200px;
+}
+.hidden{
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);transform: translateX(-100%);
+}
+.hiddenRight{
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);transform: translateX(100%);    
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+@media(prefers-reduced-motion){
+    .hidden{
+        transition: none;
+    }
+    .hiddenRight{
+        transition: none;
+    }
 }
 #footer{
     display: flex;

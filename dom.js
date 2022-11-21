@@ -1,48 +1,79 @@
 /* Components for front end development */
+/* This function will run anytime the visibility of entries change */
+const observer = new IntersectionObserver((entries) =>{
+    entries.forEach((entry) => {
+        // Check if entry is intersecting viewport or not
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+        else{
+            entry.target.classList.remove('show');
+        }
+    })
+})
+const hidden = document.querySelectorAll('.hidden');
+hidden.forEach((el) => observer.observe(el));
+const hiddenRight = document.querySelectorAll('.hiddenRight');
+hiddenRight.forEach((el) => observer.observe(el));
+var webDevelopment = document.getElementById("webDevelopment");
+webDevelopment.addEventListener("click",addWebDeveloperInfo);
+var SWEDevelopment = document.getElementById("SWEDevelopment");
+SWEDevelopment.addEventListener("click",addSweInfo);
+//SWEDevelopment.addEventListener("click",changeColor);
+function changeColor(){
+    feContainer.style.background = 'black';
+}
+var skillsDisplay = document.getElementById("skillsDisplay");
 var feContainer = document.getElementById("skillInfo");
 var webDevSrcDown = document.getElementById("webDevSrcDown");
 var frontEnd = document.getElementById("feContainer");
 var testHTML = document.getElementById("testHTML");
-webDevSrcDown.addEventListener("click",addWebDeveloperInfo);
 var skills = document.getElementsByClassName("skillItem");
 var webDevSrcUp = document.getElementById("webDevSrcUp");
-webDevSrcUp.addEventListener("click",removeWebDeveloperInfo);
 var htmlSkill = document.createElement('li');
 htmlSkill.setAttribute('id', 'skillId');
-htmlSkill.innerHTML += '<h4 class = "skillItem" id = "item">HTML  <div class="skills html"></div></h4>'; 
+htmlSkill.innerHTML += '<h2 class = "skillItem" id = "item"><i class="fa-solid fa-square-check"></i>  HTML  <i class="fa-brands fa-html5"></i></h2>'; 
 var cssSkill = document.createElement('li');
 cssSkill.setAttribute('id', 'skillId');
-cssSkill.innerHTML += '<h4 class = "skillItem">CSS <div class="skills CSS"></div></h4></h4>';
+//cssSkill.innerHTML += '<h4 class = "skillItem">CSS <div class="skills CSS"></div></h4></h4>';
+cssSkill.innerHTML += '<h2 class = "skillItem"><i class="fa-solid fa-square-check"></i>  CSS  <i class="fa-brands fa-css3-alt"></i></h2>';
 var JSSkill = document.createElement('li');
 JSSkill.setAttribute('id', 'skillId');
-JSSkill.innerHTML += '<h4 class = "skillItem" id = "item">Java Script  <div class="skills JS"></div></h4>'; 
+JSSkill.innerHTML += '<h2 class = "skillItem" id = "item"><i class="fa-solid fa-square-check"></i>  Java Script   <i class="fa-brands fa-js"></i></h2>'; 
+var reactSkill = document.createElement('li');
+reactSkill.setAttribute('id', 'skillId');
+reactSkill.innerHTML += '<h2 class = "skillItem" id = "item"><i class="fa-solid fa-square-check"></i>  React JS   <i class="fa-brands fa-react"></i></h2>'; 
+var javaSkill = document.createElement("li");
+javaSkill.setAttribute("id","skillId");
+javaSkill.innerHTML += '<h2 class = "skillItem" id = "item"><i class="fa-solid fa-square-check"></i>  JAVA   <i class="fa-brands fa-java"></i></h2>'; 
+var pythonSkill = document.createElement("li");
+pythonSkill.setAttribute("id","skillId");
+pythonSkill.innerHTML += '<h2 class = "skillItem" id = "item"><i class="fa-solid fa-square-check"></i> Python  <i class="fa-brands fa-python"></i></h2>'; 
 function addWebDeveloperInfo(e){
-    frontEnd.appendChild(htmlSkill);
-    frontEnd.appendChild(cssSkill);
-    frontEnd.appendChild(JSSkill);
-}
-function removeWebDeveloperInfo(e){
-    frontEnd.removeChild(htmlSkill);
-    frontEnd.removeChild(cssSkill);
-    frontEnd.removeChild(JSSkill);
+    deleteChild();
+    webDevelopment.style.backgroundColor='#90e0ef';
+    SWEDevelopment.style.background='white';
+    skillsDisplay.appendChild(htmlSkill);
+    skillsDisplay.appendChild(cssSkill);
+    skillsDisplay.appendChild(JSSkill);
+    skillsDisplay.appendChild(reactSkill);
 }
 /* Components for back end development */
 var sweContainer = document.getElementById('SWEDevelopment');
 var sweSrcUp = document.getElementById('sweUp');
 var sweSrcDown = document.getElementById('sweDown');
 sweSrcDown.addEventListener("click",addSweInfo);
-sweSrcUp.addEventListener("click",removeSweInfo);
-var javaSkill = document.createElement("li");
-javaSkill.setAttribute("id","skillId");
-javaSkill.innerHTML += '<h4 class = "skillItem" id = "item">JAVA  <div class="skills html"></div></h4>'; 
-var pythonSkill = document.createElement("li");
-pythonSkill.setAttribute("id","skillId");
-pythonSkill.innerHTML += '<h4 class = "skillItem" id = "item">Python  <div class="skills html"></div></h4>'; 
-function addSweInfo(e){
-    sweContainer.appendChild(javaSkill);
-    sweContainer.appendChild(pythonSkill);
+
+function deleteChild(){
+    var container = document.getElementById('skillsDisplay');
+    container.innerHTML = '';
 }
-function removeSweInfo(e){
-    sweContainer.removeChild(javaSkill);
-    sweContainer.removeChild(pythonSkill);
+function addSweInfo(e){
+    deleteChild();
+    SWEDevelopment.style.background='#90e0ef';
+    webDevelopment.style.background='white';
+    skillsDisplay.appendChild(pythonSkill);
+    skillsDisplay.appendChild(javaSkill);
+
 }
