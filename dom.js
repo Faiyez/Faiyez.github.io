@@ -77,3 +77,5 @@ function addSweInfo(e){
     skillsDisplay.appendChild(javaSkill);
 
 }
+
+/* Work Experience Section Animation */
